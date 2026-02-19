@@ -3,6 +3,7 @@ import "@repo/ui/globals.css";
 
 import { Geist, Geist_Mono, Noto_Sans, Public_Sans } from "next/font/google";
 import { ThemeProvider } from "@repo/ui/hooks/use-colour";
+import { TooltipProvider } from "@repo/ui/components/ui/tooltip";
 
 const publicSans = Public_Sans({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -35,7 +36,9 @@ export function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
+                    <TooltipProvider>
                     {children}
+                    </TooltipProvider>
                 </ThemeProvider>
             </body>
         </html>
